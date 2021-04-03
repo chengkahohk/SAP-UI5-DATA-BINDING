@@ -5,10 +5,12 @@ sap.ui.require([
 ], function(JSONModel, XMLView, ResourceModel) {
     "use restrict"
 
-
     // Attach an anonymous function to the SAPUI5 'init' event
     sap.ui.getCore().attachInit(function (){
         // Create a JSON model from an object literal
+        var oProductModel = new JSONModel();
+        oProductModel.loadData("./model/Products.json");
+        sap.ui.getCore().setModel(oProductModel, "products");
         var oModel = new JSONModel({
                         firstName: "Hello",
                         lastName: "World",
@@ -20,6 +22,7 @@ sap.ui.require([
                             country: "香港"
                         },
                         salesAmount: 12345.6789,
+                        priceThreshold: 20,
                         currencyCode: "EUR"
         });
 
