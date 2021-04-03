@@ -14,8 +14,8 @@
                 factory: '.productListFactory'
             }">
             <dependents>
-            <core:Fragment fragmentName="sap.ui.demi.db.view.ProductSimple" type="XML"/>
-             <core:Fragment fragmentName="sap.ui.demi.db.view.ProductExtended" type="XML"/>           
+            <core:Fragment fragmentName="sap.ui.demo.db.view.ProductSimple" type="XML"/>
+             <core:Fragment fragmentName="sap.ui.demo.db.view.ProductExtended" type="XML"/>           
             </dependents>
           </List>
             <form:SimpleForm editable="true" layout="ColumnLayout">
