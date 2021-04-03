@@ -18,7 +18,9 @@ sap.ui.require([
                             city: "大嶼山",
                             zip: "8964",
                             country: "香港"
-                        }
+                        },
+                        salesAmount: 12345.6789,
+                        currencyCode: "EUR"
         });
 
         sap.ui.getCore().setModel(oModel);
@@ -33,9 +35,15 @@ sap.ui.require([
         sap.ui.getCore().setModel(oResourceModel,"i18n");
 
         // Display the XML View called "App"
-        new XMLView({
+        var oView = new XMLView({
             viewName: "sap.ui.demo.db.view.App"
-        }).placeAt("content");
+        });
+        
+        // Register the view with the message manger
+        sap.ui.getCore().getMessageManager().registerObject(oView, true);
+
+        // Insert the view into the DOM
+        oView.placeAt("content");
 
         
     })
